@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Research — Kabeukina Umi — April 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Damion&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coklat: #6B3A2A;
+    --coklat-light: #A0522D;
+    --coklat-pale: #F5EDE6;
+    --merah: #C0392B;
+    --merah-pale: #FCEBEB;
+    --biru: #2C5F8A;
+    --biru-pale: #E6F0F8;
+    --ungu: #6B4C93;
+    --ungu-pale: #EEE8F5;
+    --cream: #FAF6F1;
+    --warm-white: #FFFDF9;
+    --text-dark: #2A1A10;
+    --text-mid: #6B4A35;
+    --text-light: #A07858;
+    --border: #E8D8CC;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Karla', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--coklat);
+    padding: 3rem 2rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .site-header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 10%;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .brand-name {
+    font-family: 'Damion', cursive;
+    font-size: 2.8rem;
+    color: #FAF6F1;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .header-meta {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 1.5rem;
+  }
+  .header-title {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  .header-sub {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 560px;
+  }
+  .header-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  .hbadge {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.8);
+  }
+
+  /* NAV TABS */
+  .nav-wrap {
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(107,58,42,0.06);
+  }
+  .nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    padding: 14px 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-light);
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+  }
+  .nav-btn:hover { color: var(--coklat); }
+  .nav-btn.active {
+    color: var(--coklat);
+    border-bottom-color: var(--coklat);
+  }
+
+  /* MAIN */
+  .main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* SECTION HEADING */
+  .sec-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.6rem;
+    margin-top: 2rem;
+  }
+  .sec-label:first-child { margin-top: 0; }
+
+  h2.sec-title {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.25rem;
+  }
+
+  /* METRICS GRID */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 1.75rem;
+  }
+  .metric {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .metric-label { font-size: 0.75rem; color: var(--text-light); margin-bottom: 6px; }
+  .metric-value { font-family: 'Noto Serif', serif; font-size: 1.6rem; font-weight: 700; color: var(--coklat); }
+  .metric-sub { font-size: 0.72rem; color: var(--text-light); margin-top: 4px; }
+
+  /* EXEC BOX */
+  .exec-box {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+  .exec-box p { margin-bottom: 0.85rem; }
+  .exec-box p:last-child { margin-bottom: 0; }
+
+  /* SCORE BARS */
+  .scores { margin-bottom: 1.5rem; }
+  .score-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .score-name { font-size: 0.82rem; color: var(--text-mid); min-width: 170px; }
+  .score-track {
+    flex: 1;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .score-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: var(--coklat);
+    transition: width 1s cubic-bezier(.4,0,.2,1);
+  }
+  .score-fill.mid { background: #D4820A; }
+  .score-num { font-size: 0.82rem; font-weight: 600; color: var(--text-dark); min-width: 32px; text-align: right; }
+
+  /* TABLE */
+  .table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+  thead th {
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    background: var(--coklat-pale);
+    border-bottom: 1px solid var(--border);
+  }
+  tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: var(--cream); }
+
+  /* BADGES */
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge-red { background: var(--merah-pale); color: var(--merah); }
+  .badge-orange { background: #FEF0DC; color: #A05A00; }
+  .badge-green { background: #EAF4E0; color: #2D6A10; }
+  .badge-blue { background: var(--biru-pale); color: var(--biru); }
+  .badge-purple { background: var(--ungu-pale); color: var(--ungu); }
+
+  /* CARDS GRID */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+  .card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .card-title { font-family: 'Noto Serif', serif; font-size: 0.92rem; font-weight: 600; margin-bottom: 6px; color: var(--text-dark); }
+  .card-body { font-size: 0.83rem; color: var(--text-mid); line-height: 1.55; }
+
+  /* INSIGHT BOX */
+  .insight {
+    border-left: 3px solid var(--coklat);
+    background: var(--coklat-pale);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+  }
+  .insight strong { display: block; font-size: 0.85rem; margin-bottom: 3px; color: var(--coklat); }
+
+  /* CAUTION BOX */
+  .caution {
+    background: var(--merah-pale);
+    border: 1px solid #F0B0B0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+  }
+  .caution h4 { font-size: 0.84rem; color: var(--merah); margin-bottom: 4px; }
+  .caution p { font-size: 0.82rem; color: #9B3030; }
+
+  /* TREND ITEM */
+  .trend-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .trend-item:last-child { border-bottom: none; }
+  .trend-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .trend-body h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 3px; }
+  .trend-body p { font-size: 0.83rem; color: var(--text-mid); }
+
+  /* ACTION ITEMS */
+  .action-item {
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .action-item:last-child { border-bottom: none; }
+  .action-num {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--coklat);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .action-body h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 3px; }
+  .action-body p { font-size: 0.82rem; color: var(--text-mid); }
+
+  /* TWO COL */
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.5rem; }
+  @media (max-width: 600px) { .row2 { grid-template-columns: 1fr; } }
+
+  /* DIVIDER */
+  hr { border: none; border-top: 1px solid var(--border); margin: 1.75rem 0; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--coklat);
+    padding: 1.5rem 2rem;
+    text-align: center;
+  }
+  .footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .footer p {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 4px;
+  }
+  .footer .brand-small {
+    font-family: 'Damion', cursive;
+    font-size: 1.4rem;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    .brand-name { font-size: 2rem; }
+    .header-title { font-size: 1.2rem; }
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .nav-btn { padding: 12px 14px; font-size: 0.78rem; }
+    .score-name { min-width: 130px; font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand-name">kabeukina umi</div>
+    <div class="header-meta">Bakery · Beverage · Bogor · Est. 2020</div>
+    <h1 class="header-title">Market Research Report</h1>
+    <p class="header-sub">Laporan riset pasar mendalam untuk persiapan pembukaan kedai pertama Kabeukina Umi, Juni 2026.</p>
+    <div class="header-badges">
+      <span class="hbadge">📅 April 2026</span>
+      <span class="hbadge">🏪 Target Buka: Juni 2026</span>
+      <span class="hbadge">📍 Bogor, Indonesia</span>
+      <span class="hbadge">🎯 Premium Homemade Bakery</span>
+    </div>
+  </div>
+</header>
+
+<nav class="nav-wrap">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="showTab('exec', this)">Executive Summary</button>
+    <button class="nav-btn" onclick="showTab('comp', this)">Competitor Analysis</button>
+    <button class="nav-btn" onclick="showTab('tren', this)">Market Trends</button>
+    <button class="nav-btn" onclick="showTab('audience', this)">Target Audience</button>
+    <button class="nav-btn" onclick="showTab('diff', this)">Diferensiasi</button>
+    <button class="nav-btn" onclick="showTab('strat', this)">Rekomendasi</button>
+  </div>
+</nav>
+
+<main class="main">
+
+  <!-- EXECUTIVE SUMMARY -->
+  <section id="exec" class="panel active">
+    <div class="sec-label">Overview</div>
+    <h2 class="sec-title">Executive Summary</h2>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">IKK Bank Indonesia</div>
+        <div class="metric-value">127.0</div>
+        <div class="metric-sub">Jan 2026 — optimisme tinggi</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Kompetitor langsung</div>
+        <div class="metric-value">8+</div>
+        <div class="metric-sub">bakery di kota Bogor</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">TikTok engagement</div>
+        <div class="metric-value">4.86%</div>
+        <div class="metric-sub">vs Instagram 1.16%</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Harga benchmark</div>
+        <div class="metric-value">40–250k</div>
+        <div class="metric-sub">range produk sejenis</div>
+      </div>
+    </div>
+
+    <div class="exec-box">
+      <p>Kabeukina Umi memiliki peluang yang sangat kuat untuk masuk pasar bakery premium Bogor. Pasar berada di titik optimisme tinggi — Indeks Keyakinan Konsumen Bank Indonesia mencapai <strong>127.0 per Januari 2026</strong>, dengan konsumen kelas menengah atas menunjukkan <em>willingness to pay</em> yang lebih tinggi untuk produk premium.</p>
+      <p>Lanskap kompetitor Bogor didominasi oleh dua kutub: bakery legendaris (Bogor Permai, De Paris, Roti Unyil) yang kuat di segmen oleh-oleh, dan bakery kekinian (Cheesy Pie, Hiranya, Marley Artisan) yang fokus di estetika. <strong>White space yang terbuka adalah bakery premium yang hangat dan personal</strong> — yang memiliki soul "home feel" sekaligus estetika premium.</p>
+      <p>Tren 2026 sangat berpihak pada positioning Kabeukina Umi: konsumen semakin mencari <em>clean label</em>, keautentikan, dan produk yang punya cerita. Rencana produk minuman (kopi, teh, jus) untuk kedai juga sangat tepat waktu — tren hybrid cafe+bakery space sedang naik daun.</p>
+    </div>
+
+    <div class="sec-label">Posisi Kompetitif</div>
+    <div class="scores">
+      <div class="score-row">
+        <span class="score-name">Keautentikan brand</span>
+        <div class="score-track"><div class="score-fill" style="width:90%"></div></div>
+        <span class="score-num">9/10</span>
+      </div>
+      <div class="score-row">
+        <span class="score-name">Potensi premium pricing</span>
+        <div class="score-track"><div class="score-fill" style="width:80%"></div></div>
+        <span class="score-num">8/10</span>
+      </div>
+      <div class="score-row">
+        <span class="score-name">Kesiapan digital/konten</span>
+        <div class="score-track"><div class="score-fill mid" style="width:65%"></div></div>
+        <span class="score-num">6.5/10</span>
+      </div>
+      <div class="score-row">
+        <span class="score-name">Diferensiasi vs kompetitor</span>
+        <div class="score-track"><div class="score-fill" style="width:85%"></div></div>
+        <span class="score-num">8.5/10</span>
+      </div>
+      <div class="score-row">
+        <span class="score-name">Skala distribusi nasional</span>
+        <div class="score-track"><div class="score-fill mid" style="width:50%"></div></div>
+        <span class="score-num">5/10</span>
+      </div>
+    </div>
+
+    <div class="insight"><strong>💡 Insight Utama</strong>Tidak ada pemain di Bogor yang menggabungkan estetika premium dengan narasi keluarga yang genuine. Ini adalah white space terbesar Kabeukina Umi.</div>
+    <div class="insight" style="border-left-color:var(--biru);background:var(--biru-pale)"><strong style="color:var(--biru)">📱 TikTok Opportunity</strong>Konsep brownies artisan + minuman dalam satu kedai hangat dan personal adalah konten yang sangat layak viral di TikTok sebelum toko bahkan dibuka.</div>
+  </section>
+
+  <!-- COMPETITOR ANALYSIS -->
+  <section id="comp" class="panel">
+    <div class="sec-label">Competitive Landscape</div>
+    <h2 class="sec-title">Competitor Analysis</h2>
+
+    <div class="sec-label">Kompetitor Langsung — Bakery Premium Bogor</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Brand</th><th>Tipe</th><th>Keunggulan</th><th>Ancaman</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Bogor Permai (Boper)</strong></td><td>Legendaris, dine-in sejak 1963</td><td>Kepercayaan 60+ tahun, ikonik wisata kuliner</td><td><span class="badge badge-orange">Sedang</span></td></tr>
+          <tr><td><strong>De Paris Bakery</strong></td><td>Toko kue khas Bogor sejak 1997</td><td>Roti talas khas, lokal eksklusif</td><td><span class="badge badge-orange">Sedang</span></td></tr>
+          <tr><td><strong>Cheesy Pie by Chocomory</strong></td><td>Kekinian, estetis, dine-in</td><td>Visual menarik, proses pembuatan terlihat</td><td><span class="badge badge-red">Tinggi</span></td></tr>
+          <tr><td><strong>Bogor Raincake</strong></td><td>Premium, celebrity brand (Shireen Sungkar)</td><td>Backing selebriti, awareness tinggi</td><td><span class="badge badge-red">Tinggi</span></td></tr>
+          <tr><td><strong>Hiranya Pretty Cakes</strong></td><td>Kue estetis, grand open Mei 2024</td><td>Desain pastel elegan, whole cake & donat</td><td><span class="badge badge-orange">Sedang</span></td></tr>
+          <tr><td><strong>Marley Artisan Bakery</strong></td><td>Artisan, homemade, ada minuman</td><td>Resep rumahan, harga mulai Rp 20rb</td><td><span class="badge badge-orange">Sedang</span></td></tr>
+          <tr><td><strong>Michelle Bakery & Cafe</strong></td><td>Bakery-cafe, multi-cabang</td><td>Variasi lengkap, dine-in, harga terjangkau</td><td><span class="badge badge-green">Rendah</span></td></tr>
+          <tr><td><strong>Rafita's Cake Store</strong></td><td>Kue halal, suasana cozy</td><td>Nyaman untuk ngeteh, kue & roti</td><td><span class="badge badge-orange">Sedang</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sec-label">Kompetitor Tidak Langsung — Brand Nasional</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Brand</th><th>Produk Utama</th><th>Harga</th><th>Kelemahan vs Kabeukina</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Ina Cookies</strong></td><td>Kue kering (144K IG followers)</td><td>Rp 80–500rb/toples</td><td>Mass production, tidak ada home feel, tidak ada kedai</td></tr>
+          <tr><td><strong>Harvest Cake</strong></td><td>Cake premium, multi-kota</td><td>Rp 75–250rb/pcs</td><td>Premium tapi impersonal, tidak ada local story</td></tr>
+          <tr><td><strong>Amanda Brownies</strong></td><td>Brownies kukus, banyak varian</td><td>Mulai Rp 41rb</td><td>Kehilangan nuansa homemade, tidak ada kedai experience</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+    <div class="sec-label">⚠️ Kehati-hatian</div>
+    <div class="caution">
+      <h4>Bogor Raincake — celebrity brand effect</h4>
+      <p>Dimiliki Shireen Sungkar, memiliki daya tarik awareness sangat tinggi via media sosial selebriti. Jangan bersaing langsung di hype — kuatkan narasi keautentikan yang lebih dalam dan genuinely personal.</p>
+    </div>
+    <div class="caution">
+      <h4>Perang harga di segmen brownies</h4>
+      <p>Amanda dari Rp 41rb, kompetitor online sangat banyak. Kabeukina harus keluar dari perang harga dan fokus pada diferensiasi rasa, packaging premium, dan experience kedai.</p>
+    </div>
+    <div class="caution">
+      <h4>Artisan bakery terjangkau (Marley)</h4>
+      <p>Konsep mirip tapi tier harga berbeda. Pastikan komunikasi premium Kabeukina konsisten dari packaging hingga plating di kedai, sehingga justifikasi harga terasa natural bagi konsumen.</p>
+    </div>
+  </section>
+
+  <!-- MARKET TRENDS -->
+  <section id="tren" class="panel">
+    <div class="sec-label">Industry Overview</div>
+    <h2 class="sec-title">Market Trends 2025–2026</h2>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">Konsumen riset online</div>
+        <div class="metric-value">70%+</div>
+        <div class="metric-sub">sebelum beli (Sigma Research)</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">TikTok engagement</div>
+        <div class="metric-value">4.86%</div>
+        <div class="metric-sub">vs IG 1.16%</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Gen Z pilih ramah lingkungan</div>
+        <div class="metric-value">58%</div>
+        <div class="metric-sub">survei Indonesia 2025</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Frekuensi konsumsi</div>
+        <div class="metric-value">Daily</div>
+        <div class="metric-sub">bukan hanya momen spesial</div>
+      </div>
+    </div>
+
+    <div class="trend-item">
+      <div class="trend-icon" style="background:var(--biru-pale)">🏷</div>
+      <div class="trend-body">
+        <h4>Clean Label & Transparansi Bahan</h4>
+        <p>Konsumen semakin kritis. Homemade tanpa pengawet dan bahan artifisial menjadi nilai jual premium. Kabeukina langsung relevan di sini — narasi "dari dapur keluarga" adalah verifikasi terkuat.</p>
+      </div>
+    </div>
+    <div class="trend-item">
+      <div class="trend-icon" style="background:#EAF4E0">🏡</div>
+      <div class="trend-body">
+        <h4>Hybrid Space: Cafe + Toko + Aktivitas</h4>
+        <p>Tren 2026: coffee shop bukan sekadar ngopi. Konsep bakery + minuman + ruang hangout menjadi model paling dicari. Rencana menu minuman (kopi, teh, jus) sangat tepat waktu.</p>
+      </div>
+    </div>
+    <div class="trend-item">
+      <div class="trend-icon" style="background:#FEF0DC">📱</div>
+      <div class="trend-body">
+        <h4>TikTok sebagai Food Discovery Utama</h4>
+        <p>Food adalah kategori teratas di TikTok Indonesia. Video proses masak 15–30 detik, BTS dapur, dan reaksi first bite mendrive foot traffic dalam hitungan jam. Algoritma FYP sangat demokratis untuk brand baru.</p>
+      </div>
+    </div>
+    <div class="trend-item">
+      <div class="trend-icon" style="background:var(--ungu-pale)">🎨</div>
+      <div class="trend-body">
+        <h4>Local Pride + Global Aesthetics</h4>
+        <p>Konsumen bangga produk lokal berkualitas. Rasa lokal (talas Bogor, pala, langit Puncak) dengan presentasi premium modern adalah formula yang terbukti. Kabeukina sudah ada di sini dengan visual identity-nya.</p>
+      </div>
+    </div>
+    <div class="trend-item">
+      <div class="trend-icon" style="background:#E1F5EE">✨</div>
+      <div class="trend-body">
+        <h4>Konsistensi = Premium</h4>
+        <p>Konsumen tidak cukup puas dengan rasa enak satu kali. Konsistensi rasa di setiap kunjungan, setiap batch, online maupun offline — inilah yang membedakan bakery amatir dari yang profesional.</p>
+      </div>
+    </div>
+    <div class="trend-item">
+      <div class="trend-icon" style="background:var(--merah-pale)">💝</div>
+      <div class="trend-body">
+        <h4>Pengalaman Emosional & Storytelling</h4>
+        <p>Brand yang punya narasi kuat jauh lebih diingat. "Dari dapur keluarga Umi" adalah cerita yang tidak bisa dipalsukan kompetitor — ini adalah aset terkuat yang perlu dikomunikasikan konsisten.</p>
+      </div>
+    </div>
+    <div class="trend-item">
+      <div class="trend-icon" style="background:#F1EFE8">📦</div>
+      <div class="trend-body">
+        <h4>Packaging Premium = Keputusan Beli</h4>
+        <p>Window box, kertas premium, packaging yang "sayang untuk dibuang" mendrive repeat purchase dan UGC organik. Packaging Kabeukina yang sudah didesain Luky adalah investasi yang langsung terasa.</p>
+      </div>
+    </div>
+
+    <hr>
+    <div class="sec-label">Tren Relevan untuk Rencana Minuman Kedai</div>
+    <div class="row2">
+      <div class="card">
+        <span class="badge badge-blue" style="margin-bottom:8px">Peluang Besar</span>
+        <div class="card-title">Kopi specialty + kue = pasangan ideal</div>
+        <div class="card-body">Konsumen yang datang untuk kue akan add-on minuman. Margin minuman jauh lebih tinggi dari kue. Rata-rata order value naik 40–60% dengan adanya menu minuman.</div>
+      </div>
+      <div class="card">
+        <span class="badge badge-green" style="margin-bottom:8px">On Trend</span>
+        <div class="card-title">Teh lokal bernilai heritage</div>
+        <div class="card-body">Teh poci, wedang, atau teh lokal Bogor selaras dengan positioning. Bisa jadi differentiator vs kompetitor yang hanya sajikan kopi internasional.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARGET AUDIENCE -->
+  <section id="audience" class="panel">
+    <div class="sec-label">Consumer Insights</div>
+    <h2 class="sec-title">Target Audience</h2>
+
+    <div class="cards">
+      <div class="card">
+        <span class="badge badge-blue" style="margin-bottom:8px">Segmen Primer</span>
+        <div class="card-title">Quality-Conscious Families</div>
+        <div class="card-body">Usia 28–45, pasangan/keluarga muda Bogor. Peduli kualitas bahan, suka sharing ke keluarga besar, momen arisan & gathering. Willing to pay untuk produk yang "bisa dipercaya rasanya."</div>
+      </div>
+      <div class="card">
+        <span class="badge badge-purple" style="margin-bottom:8px">Segmen Sekunder</span>
+        <div class="card-title">Gift & Hampers Buyers</div>
+        <div class="card-body">Mencari produk presentabel untuk hadiah ulang tahun, hampers lebaran, souvenir pernikahan. Prioritas: packaging cantik + rasa enak + brand yang bisa dibanggakan.</div>
+      </div>
+      <div class="card">
+        <span class="badge badge-green" style="margin-bottom:8px">Segmen Tersier</span>
+        <div class="card-title">Pelancong & Oleh-Oleh Hunters</div>
+        <div class="card-body">Wisatawan Jakarta & sekitarnya. Mencari oleh-oleh premium khas Bogor yang berbeda. Butuh narasi "khas Bogor" yang kuat dan packaging yang mudah dibawa.</div>
+      </div>
+    </div>
+
+    <div class="sec-label">Pain Points & Motivasi Pembelian</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Pain Point Konsumen</th><th>Motivasi Pembelian</th></tr></thead>
+        <tbody>
+          <tr><td>Kue enak tapi tidak konsisten tiap beli</td><td>Kepercayaan rasa yang stabil di setiap batch</td></tr>
+          <tr><td>Packaging tidak presentable untuk gift</td><td>Packaging premium yang "worthy" untuk dihadiahkan</td></tr>
+          <tr><td>Brand besar terasa impersonal</td><td>Kedekatan dan kehangatan brand homemade yang genuinely personal</td></tr>
+          <tr><td>Susah cari kue premium khas Bogor</td><td>Identitas lokal Bogor yang kuat dan bisa dibanggakan</td></tr>
+          <tr><td>Tidak tahu bahan yang dipakai</td><td>Transparansi bahan, tanpa pengawet, clean label</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sec-label">Konsumen Bogor Lokal vs Nasional</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Aspek</th><th>Konsumen Bogor Lokal</th><th>Konsumen Nasional/Jakarta</th></tr></thead>
+        <tbody>
+          <tr><td>Motivasi beli</td><td>Konsumsi keluarga, arisan, harian</td><td>Oleh-oleh, hampers, gifting premium</td></tr>
+          <tr><td>Discovery channel</td><td>Word of mouth, IG lokal, Google Maps</td><td>TikTok, food blogger, IG reels</td></tr>
+          <tr><td>Harga sensitivitas</td><td>Lebih price-sensitive, lihat value</td><td>Lebih willing-to-pay untuk brand dikenal</td></tr>
+          <tr><td>Frekuensi</td><td>Rutin/repeat, potensi loyal customer</td><td>Occasional, tapi nilai order lebih besar</td></tr>
+          <tr><td>Nilai lokal Bogor</td><td>Familiar & bangga dengan referensi lokal</td><td>Exoticism value — tertarik dengan "khas Bogor"</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sec-label">Willingness to Pay</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Produk</th><th>Range Harga yang Diterima</th></tr></thead>
+        <tbody>
+          <tr><td>Fudgy & aneka brownies</td><td>Rp 80–130rb</td></tr>
+          <tr><td>Kue kering (toples)</td><td>Rp 95–150rb</td></tr>
+          <tr><td>Burnt cheesecake (whole)</td><td>Rp 150–220rb</td></tr>
+          <tr><td>Kue ulang tahun</td><td>Rp 200–400rb</td></tr>
+          <tr><td>Snack box / hampers</td><td>Rp 150–350rb</td></tr>
+          <tr><td>Minuman di kedai</td><td>Rp 20–45rb</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DIFERENSIASI -->
+  <section id="diff" class="panel">
+    <div class="sec-label">Strategic Positioning</div>
+    <h2 class="sec-title">Peluang Diferensiasi</h2>
+
+    <div class="sec-label">White Space yang Terbuka</div>
+    <div class="cards">
+      <div class="card">
+        <span class="badge badge-green" style="margin-bottom:8px">Peluang Terbuka</span>
+        <div class="card-title">Bakery premium dengan soul keluarga</div>
+        <div class="card-body">Tidak ada pemain di Bogor yang menggabungkan estetika premium dengan narasi keluarga yang genuine. Semua pemain premium terasa "keren tapi jauh." Ini adalah ruang Kabeukina.</div>
+      </div>
+      <div class="card">
+        <span class="badge badge-green" style="margin-bottom:8px">Peluang Terbuka</span>
+        <div class="card-title">Local Bogor identity yang bisa dijual nasional</div>
+        <div class="card-body">Talas Bogor, hujan Bogor, pala, langit Puncak — identitas spesifik tapi bisa dijual ke seluruh Indonesia sebagai "oleh-oleh premium Bogor yang berbeda."</div>
+      </div>
+      <div class="card">
+        <span class="badge badge-green" style="margin-bottom:8px">Peluang Terbuka</span>
+        <div class="card-title">Brownies artisan + beverage experience</div>
+        <div class="card-body">Tidak ada pemain di Bogor yang fokus pada brownies artisan + minuman dalam satu kedai yang hangat dan personal. Konsep sangat layak viral di TikTok.</div>
+      </div>
+    </div>
+
+    <div class="sec-label">Potensi Channel Distribusi</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Channel</th><th>Prioritas</th><th>Potensi Revenue</th><th>Catatan</th></tr></thead>
+        <tbody>
+          <tr><td>Kedai fisik (Juni 2026)</td><td><span class="badge badge-red">Utama</span></td><td>Tinggi</td><td>Brand builder, konten TikTok/IG, foot traffic</td></tr>
+          <tr><td>Pre-order via WA/IG</td><td><span class="badge badge-red">Utama</span></td><td>Tinggi</td><td>Zero waste, demand-driven, sudah berjalan</td></tr>
+          <tr><td>Marketplace (Tokopedia/Shopee)</td><td><span class="badge badge-orange">Sekunder</span></td><td>Sedang</td><td>Setelah brand established, untuk produk shelf-stable</td></tr>
+          <tr><td>Oleh-oleh / titip jual</td><td><span class="badge badge-orange">Sekunder</span></td><td>Sedang</td><td>Partner toko oleh-oleh premium Bogor</td></tr>
+          <tr><td>B2B hampers korporat</td><td><span class="badge badge-blue">Potensial</span></td><td>Tinggi</td><td>Target 6 bulan setelah buka, order besar</td></tr>
+          <tr><td>Pop-up stand / bazaar</td><td><span class="badge badge-blue">Potensial</span></td><td>Sedang</td><td>Brand activation event Bogor</td></tr>
+          <tr><td>Kelas memasak</td><td><span class="badge badge-green">Future</span></td><td>Sedang + loyalty</td><td>Sesuai tagline "dari dapur keluarga"</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sec-label">Peluang Kolaborasi & Partnership</div>
+    <div class="cards">
+      <div class="card"><div class="card-title">📸 Food Photographer Lokal</div><div class="card-body">Kandidat: suami Tuyo via Nabila. Foto produk berkualitas adalah investasi utama yang langsung terasa di persepsi konsumen dan konten IG.</div></div>
+      <div class="card"><div class="card-title">📣 Micro Influencer Food Bogor</div><div class="card-body">5K–50K followers. Engagement lebih tinggi dan lebih relevan dari macro influencer. ROI jauh lebih baik untuk brand baru di area lokal.</div></div>
+      <div class="card"><div class="card-title">🛍 Toko Oleh-Oleh Premium</div><div class="card-body">Titip jual produk shelf-stable (kue kering, cookies) setelah packaging final siap. Mulai 1–2 mitra pilot.</div></div>
+      <div class="card"><div class="card-title">💍 Wedding & Event Organizer</div><div class="card-body">Cross-sell untuk hampers pernikahan premium. Hubungi 3–5 WO Bogor setelah toko buka dan portofolio hampers siap.</div></div>
+    </div>
+  </section>
+
+  <!-- REKOMENDASI -->
+  <section id="strat" class="panel">
+    <div class="sec-label">Action Plan</div>
+    <h2 class="sec-title">Rekomendasi Strategis</h2>
+
+    <div class="sec-label">Strategi Pricing</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Kategori Produk</th><th>Rekomendasi Harga</th><th>Benchmark Pasar</th><th>Logika</th></tr></thead>
+        <tbody>
+          <tr><td>Fudgy brownies (loyang 20x10)</td><td><strong>Rp 85–130rb</strong></td><td>Amanda: Rp 41rb, artisan: Rp 60–90rb</td><td>Premium 30–50% vs artisan — justified packaging + narasi</td></tr>
+          <tr><td>Kue kering (toples)</td><td><strong>Rp 95–150rb</strong></td><td>Ina Cookies: Rp 80–180rb</td><td>Pariti dengan Ina, diferensiasi di homemade story</td></tr>
+          <tr><td>Burnt cheesecake (whole)</td><td><strong>Rp 150–220rb</strong></td><td>Harvest: Rp 150–250rb</td><td>Sejajar Harvest, positioning premium sangat kuat</td></tr>
+          <tr><td>Kue ulang tahun</td><td><strong>Rp 200–400rb</strong></td><td>Hiranya: Rp 250–500rb</td><td>Lebih accessible dari Hiranya</td></tr>
+          <tr><td>Snack box / hampers</td><td><strong>Rp 150–350rb</strong></td><td>Ina parcel: Rp 200rb–1jt</td><td>Entry terjangkau, premium edition untuk momen spesial</td></tr>
+          <tr><td>Minuman di kedai</td><td><strong>Rp 20–45rb</strong></td><td>Kafe Bogor: Rp 25–40rb</td><td>Kompetitif, jadi add-on value bagi pembeli kue</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sec-label">Action Items — Menuju Juni 2026</div>
+    <div class="action-item">
+      <div class="action-num">1</div>
+      <div class="action-body">
+        <h4>Selesaikan final packaging (April–Mei)</h4>
+        <p>Tambahkan kontak (IG, WA) dan komposisi bahan di packaging. Packaging adalah sales tool #1 untuk first impression dan UGC konsumen.</p>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">2</div>
+      <div class="action-body">
+        <h4>Sesi foto produk profesional (Mei)</h4>
+        <p>Booking fotografer makanan (kandidat: suami Tuyo via Nabila) sebelum launch. Foto berkualitas tinggi dibutuhkan untuk IG feed, packaging, marketplace, dan media kit.</p>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">3</div>
+      <div class="action-body">
+        <h4>Strategi konten rebranding bertahap di Instagram</h4>
+        <p>Nabila + Sarah: transisi konten secara gradual (foto lebih premium → warna brand muncul → logo baru reveal). Jaga kontinuitas agar followers WA tidak bingung tentang identitas brand.</p>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">4</div>
+      <div class="action-body">
+        <h4>Aktivasi TikTok sebelum buka (Mei–Juni)</h4>
+        <p>Behind-the-scenes dapur, proses pembuatan brownies, dan teaser kedai. TikTok untuk awareness, Instagram untuk brand building. Target: ada konten viral sebelum hari buka.</p>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">5</div>
+      <div class="action-body">
+        <h4>Soft launch + invite micro influencer food Bogor</h4>
+        <p>1 minggu sebelum grand opening, undang 5–10 food blogger Bogor untuk mencicipi dan membuat konten organik. Jauh lebih efektif dari paid ads untuk brand baru.</p>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">6</div>
+      <div class="action-body">
+        <h4>Finalisasi menu minuman kedai</h4>
+        <p>Tetapkan menu (kopi, teh, jus) dengan harga kompetitif. Pastikan ada satu signature drink yang unik dan mudah difoto — konten TikTok natural.</p>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">7</div>
+      <div class="action-body">
+        <h4>Setup Google Business Profile & marketplace</h4>
+        <p>Daftarkan kedai di Google Maps sebelum buka. Setup marketplace untuk produk shelf-stable (kue kering). Channel discovery utama konsumen baru.</p>
+      </div>
+    </div>
+
+    <hr>
+    <div class="sec-label">KPI Pasca-Launch</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">📅 Bulan 1–2</div>
+        <div class="card-body">Jumlah transaksi/hari · Nilai order rata-rata · Follower IG baru/minggu · Views TikTok per konten · Repeat order via WA</div>
+      </div>
+      <div class="card">
+        <div class="card-title">📅 Bulan 3–6</div>
+        <div class="card-body">Customer retention rate · Rasio add-on minuman · Jumlah UGC organik · Revenue hampers vs retail · Rating Google Maps</div>
+      </div>
+      <div class="card">
+        <div class="card-title">📅 6–12 Bulan</div>
+        <div class="card-body">B2B/hampers korporat pipeline · Pesanan luar Bogor · Revenue per channel · Potensi cabang kedua · Demand kelas memasak</div>
+      </div>
+    </div>
+
+    <p style="font-size:0.72rem;color:var(--text-light);margin-top:1.5rem;line-height:1.7">
+      Sumber data: Sigma Research Indonesia 2026 · Filmapro Tren Bakery 2026 · Bank Indonesia IKK Jan 2026 · Nibble.id, Tripzilla.id, Detik Food · Ina Cookies official · Influencer Marketing Hub 2025 · Socialinsider 2025
+    </p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="brand-small">kabeukina umi</div>
+    <p>Market Research Report · April 2026</p>
+    <p>Bakery · Beverage · Bogor · Prepared for internal use</p>
+  </div>
+</footer>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
